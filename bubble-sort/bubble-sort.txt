@@ -1,0 +1,10 @@
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted. Here's an explanation of bubble sort in Java along with some code examples:
+
+Bubble Sort Algorithm:
+Start at the beginning of the list.
+Compare the first two elements. If the first element is greater than the second, swap them.
+Move to the next pair of elements and repeat step 2.
+Continue this process until you reach the end of the list.
+After the first pass, the largest element will have moved to the end.
+Repeat steps 1-5, but ignore the last element (since it's already sorted).
+Continue this process, ignoring one more element each time, until the list is fully sorted.

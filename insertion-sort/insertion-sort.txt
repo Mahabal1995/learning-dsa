@@ -1,0 +1,51 @@
+** Insertion sort is a simple sorting algorithm 
+   that builds the final sorted array one item at a time. 
+   It works by iteratively selecting and placing an element 
+   from the unsorted part of the array into 
+   its correct position in the sorted part of the array.
+
+** Insertion-Sort Idea
+
+* Virtually split the aray into a sorted and an unsorted part.
+* Assume that the first element is already sorted and remaining elements are unsorted.
+* Select an unsorted element and compare with all elements in the sorted part.
+* if the elements in the sorted part is smaller than the selected element, 
+    proceed to the next element in the unsorted part. Else, shift larger elements in the sorted part towards the right.
+* Insert the selected element at the proper index.
+* Repeat till all the unsorted elements are placed in the right order.
+
+** Dry-Run of the Algorithm
+We have an array -> [64, 34, 25, 12, 22, 11, 90]
+
+Consider first element in the array is sorted
+
+64  |   34, 25, 12, 22, 11, 90 -> now pick 34 -> an unsorted-element or 
+                                             an element that need to be inserted into sorted array
+                               -> since 34 < 64 insert it into left of the assumed sorted element
+
+34, 64  |   25, 12, 22, 11, 90 -> 25 < 64 & 34 -> insert to left of 34
+25, 34, 64  |   12, 22, 11, 90 -> 12 < 64 & 34 & 25 -> insert to left of 25
+12, 25, 34, 64  |   22, 11, 90 -> 22 < 64 & 34 & 25 -> insert to left of 25
+12, 22, 25, 34, 64  |   11, 90 -> 11 < 64 & 34 & 25 & 22 & 12 -> insert to left of 12
+11, 12, 22, 25, 34, 64  |   90 -> 90 > 64 -> leave it as it is
+
+** Time-Complexity : Big-O(worst-case-scenario) -> O(n^2)
+        (needs two loops nested one in another - so its a quadratic time-complexity)
+
+** Insertion sort is like arranging a deck of cards in your hand. 
+    You start with one card, and then pick up the next card and 
+    insert it into the right place relative to the cards you're already holding. 
+    You repeat this process until all the cards are sorted.
+
+** Explanation in Simple Terms:
+
+1. insertionSort is a function that helps sort a list of numbers.
+2. n is the total number of cards (or numbers) we have.
+3. We start with the second card (at index 1), 
+    since the first card (at index 0) is assumed to be in the sorted position.
+4. We pick up a card (number) and remember its value (we call this key).
+5. We look at the cards we're already holding (the sorted cards) and 
+    find the right place to insert our card (key).
+6. We make space for the new card by shifting other cards to the right.
+7. We put our card in the right place.
+8. We repeat this process for all the cards.

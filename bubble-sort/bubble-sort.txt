@@ -1,10 +1,82 @@
-Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted. Here's an explanation of bubble sort in Java along with some code examples:
+** Bubble sort is a simple sorting algorithm 
+   that repeatedly steps through the list, 
+   compares adjacent elements, 
+   and swaps them if they are in the wrong order. 
+   This process is repeated until the list is sorted. 
 
-Bubble Sort Algorithm:
-Start at the beginning of the list.
-Compare the first two elements. If the first element is greater than the second, swap them.
-Move to the next pair of elements and repeat step 2.
-Continue this process until you reach the end of the list.
-After the first pass, the largest element will have moved to the end.
-Repeat steps 1-5, but ignore the last element (since it's already sorted).
-Continue this process, ignoring one more element each time, until the list is fully sorted.
+** Bubble sort is called so because
+        in each pass the greatest (or smallest) element
+        comes up as a bubble and sits in the exact place in the list.
+
+** Practically bubble sort is a poor sorting algorithm
+        but it gives a good start to learn sorting algorithms
+
+** Time-Complexity : Big-O(worst-case-scenario) -> O(n^2)
+        (needs two loops nested one in another - so its a quadratic time-complexity)
+
+** Bubble-Sort Idea **
+
+* Compare adjacent elements in the array and swap the positions if they are not in the intended order
+* Repeat the instruction as you step through each element in the array
+* Once you step through the whole array with no swaps, the array is sorted
+
+
+** Steps to follow in bubble sort are:
+
+Step-1: Start at the beginning of the list.
+Step-2: Compare the first two elements. 
+        If the first element is greater than the second, swap them.
+Step-3: Move to the next pair of elements and repeat step 2.
+Step-4: Continue this process until you reach the end of the list.
+Step-5: After the first pass, 
+        the largest element will have moved to the end.
+Step-6: Repeat steps 1-5, 
+        but ignore the last element (since it's already sorted).
+Step-7: Continue this process, 
+        ignoring one more element each time, until the list is fully sorted.
+
+Dry-Run of the Algorithm:
+
+We have an array -> [64, 34, 25, 12, 22, 11, 90]
+
+keep comparing two elements
+Pass-1:
+64, 34, 25, 12, 22, 11, 90  | 64 > 34 -> swap
+34, 64, 25, 12, 22, 11, 90  | 64 > 25 -> swap
+34, 25, 64, 12, 22, 11, 90  | 64 > 12 -> swap
+34, 25, 12, 64, 22, 11, 90  | 64 > 22 -> swap
+34, 25, 12, 22, 64, 11, 90  | 64 > 11 -> swap
+34, 25, 12, 22, 11, 64, 90  | 64 < 90 -> noSwap | At the end of first pass 
+                                                | Largest element will have its place
+
+Pass-2:
+34, 25, 12, 22, 11, 64, 90  | 34 > 25 -> swap
+25, 34, 12, 22, 11, 64, 90  | 34 > 12 -> swap
+25, 12, 34, 22, 11, 64, 90  | 34 > 22 -> swap
+25, 12, 22, 34, 11, 64, 90  | 34 > 11 -> swap
+25, 12, 22, 11, 34, 64, 90  | 34 < 64 -> noSwap
+
+Pass-3:
+25, 12, 22, 11, 34, 64, 90  | 25 > 12 -> swap
+12, 25, 22, 11, 34, 64, 90  | 25 > 22 -> swap
+12, 22, 25, 11, 34, 64, 90  | 25 > 11 -> swap
+12, 22, 11, 25, 34, 64, 90  | 25 < 34 -> noSwap
+
+Pass-4:
+12, 22, 11, 25, 34, 64, 90  | 12 < 22 -> noSwap
+12, 22, 11, 25, 34, 64, 90  | 22 > 11 -> swap
+12, 11, 22, 25, 34, 64, 90  | 22 < 25 -> noSwap
+
+Pass-5:
+12, 11, 22, 25, 34, 64, 90  | 12 > 11 -> swap
+11, 12, 22, 25, 34, 64, 90  | Now the array is SORTED!!!
+
+
+
+
+
+
+
+
+
+

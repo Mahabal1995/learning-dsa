@@ -1,0 +1,27 @@
+** Quick-Sort Idea
+
+* Identify the pivot element in the array
+    * Pick first element as pivot
+    * Pick last element as pivot(My approach)
+    * Pick a random element as pivot
+    * Pick median as pivot
+* Put everything that's smaller than the pivot into a 'left' array and everything that's greater than the pivot into a 'right' array.
+* Repeaat the proces for the individual 'left' and 'right' arrays till you have an array of length 1 which is sorted by definition.
+* Repeatedly concatenate the left array, pivot and right array till one sorted array remains.
+
+We have an array ->     [64, 34, 25, 12, 22, 11, 90]
+                                    |
+                left               pivot             right
+        64, 34, 25, 12, 22, 11      90                              --> [11, 12, 22, 25, 34, 64, 90]
+                  |                                                         ^
+        left    pivot       right                                           |
+                  11     64, 34, 25, 12, 22                         --> [11, 12, 22, 25, 34, 64]
+                                |                                           ^
+                        left   pivot  right                                 |
+                        12      22     64, 34, 25                   --> [12, 22, 25, 34, 64]
+                                            |                               ^
+                                    left   pivot   right                    |
+                                           25      34, 64           --> [25, 34, 64]
+                                                      |                     ^
+                                                left pivot right            |
+                                                 34   64            --> [34, 64]
